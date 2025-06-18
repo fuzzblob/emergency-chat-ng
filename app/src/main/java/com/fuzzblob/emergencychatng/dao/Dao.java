@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown.dao;
+package com.fuzzblob.emergencychatng.dao;
 
 import android.content.Context;
 

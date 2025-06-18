@@ -36,7 +36,7 @@
             android:parentActivityName=".Main">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sephdebusser.aspiemeltdown.Main" />
+                android:value="com.fuzzblob.emergencychatng.Main" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -44,7 +44,7 @@
             android:parentActivityName=".SettingsChooserActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sephdebusser.aspiemeltdown.SettingsChooserActivity" />
+                android:value="com.fuzzblob.emergencychatng.SettingsChooserActivity" />
         </activity>
         <activity
             android:name=".SplashEditActivity"
@@ -52,7 +52,7 @@
             android:parentActivityName=".SettingsChooserActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.sephdebusser.aspiemeltdown.SettingsChooserActivity" />
+                android:value="com.fuzzblob.emergencychatng.SettingsChooserActivity" />
         </activity>
     </application>
 

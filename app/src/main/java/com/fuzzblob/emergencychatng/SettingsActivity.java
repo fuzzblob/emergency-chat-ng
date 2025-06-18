@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -88,7 +88,7 @@ public class SettingsActivity extends PreferenceActivity {
         return false;
     }
 
-    /**
+    /*
      * Obtain an {@link android.content.Intent} that will launch an explicit target activity
      * specified by sourceActivity's {@link android.support.v4.app.NavUtils#PARENT_ACTIVITY} &lt;meta-data&gt;
      * element in the application's manifest. If the device is running

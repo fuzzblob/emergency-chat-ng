@@ -15,7 +15,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.sephdebusser.aspiemeltdown"
+        applicationId 'com.fuzzblob.emergencychatng'
         minSdkVersion defaultMinSdkVersion
         targetSdkVersion defaultTargetSdkVersion
         versionCode 7
@@ -31,7 +31,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    namespace 'com.sephdebusser.aspiemeltdown'
+    namespace 'com.fuzzblob.emergencychatng'
 }
 
 greendao {

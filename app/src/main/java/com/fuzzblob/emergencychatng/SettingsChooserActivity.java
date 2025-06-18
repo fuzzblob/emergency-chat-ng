@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
 import android.content.Intent;
 import android.os.Bundle;

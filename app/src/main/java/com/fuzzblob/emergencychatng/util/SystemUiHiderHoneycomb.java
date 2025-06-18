@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown.util;
+package com.fuzzblob.emergencychatng.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

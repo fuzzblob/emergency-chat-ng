@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
 import android.app.Activity;
 import androidx.appcompat.widget.SwitchCompat;

@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.sephdebusser.aspiemeltdown.dao.Dao;
-import com.sephdebusser.aspiemeltdown.dao.DaoSession;
-import com.sephdebusser.aspiemeltdown.dao.Message;
-import com.sephdebusser.aspiemeltdown.dao.MessageDao;
+import com.fuzzblob.emergencychatng.dao.Dao;
+import com.fuzzblob.emergencychatng.dao.DaoSession;
+import com.fuzzblob.emergencychatng.dao.Message;
+import com.fuzzblob.emergencychatng.dao.MessageDao;
 
 
 /**

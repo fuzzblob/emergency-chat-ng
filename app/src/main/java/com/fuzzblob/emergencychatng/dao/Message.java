@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown.dao;
+package com.fuzzblob.emergencychatng.dao;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;

@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown.util;
+package com.fuzzblob.emergencychatng.util;
 
 import android.app.Activity;
 import android.os.Build;
@@ -105,7 +105,7 @@ public abstract class SystemUiHider {
         mFlags = flags;
     }
 
-    /**
+    /*
      * Sets up the system UI hider. Should be called from
      * {@link Activity#onCreate}.
      */

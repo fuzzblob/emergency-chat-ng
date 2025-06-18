@@ -1,11 +1,10 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,9 +15,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.sephdebusser.aspiemeltdown.dao.Dao;
-import com.sephdebusser.aspiemeltdown.dao.SplashScreen;
-import com.sephdebusser.aspiemeltdown.dao.SplashScreenDao;
+import com.fuzzblob.emergencychatng.dao.Dao;
+import com.fuzzblob.emergencychatng.dao.SplashScreen;
+import com.fuzzblob.emergencychatng.dao.SplashScreenDao;
 
 /**
  * Created by Seph De Busser on 23/12/2016.

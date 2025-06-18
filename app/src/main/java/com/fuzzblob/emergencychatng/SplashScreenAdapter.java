@@ -1,4 +1,4 @@
-package com.sephdebusser.aspiemeltdown;
+package com.fuzzblob.emergencychatng;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.sephdebusser.aspiemeltdown.dao.SplashScreen;
+import com.fuzzblob.emergencychatng.dao.SplashScreen;
 
 import java.util.Collection;
 import java.util.List;
