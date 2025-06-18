@@ -30,11 +30,15 @@
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent" />
 
-    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:showText="false"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/userSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/userSwitch" />
+        android:background="@color/chat_person_color_r"
+        android:clickable="true"
+        android:focusable="true"
+        app:showText="false" />
 
     <LinearLayout
         android:id="@+id/fullscreen_content_controls"

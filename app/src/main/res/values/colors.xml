@@ -1,5 +1,6 @@
 <resources>
 
     <color name="black_overlay">#66000000</color>
-
+    <color name="chat_person_color_r">#8CE1E4</color> <!-- color for right person speech bubbles -->
+    <color name="chat_person_color_l">#4678C7</color> <!-- color for left person speech bubbles -->
 </resources>
