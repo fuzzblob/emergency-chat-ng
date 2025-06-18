@@ -22,8 +22,8 @@ public class Chat extends Activity {
     public static final String EDIT_STRING = "EDIT_STRING";
     public static final String SWITCH_STATE = "SWITCH_STATE";
     /*
-             * The arrayadapter for our messages
-             */
+     * The arrayadapter for our messages
+     */
     private MessageAdapter mMessages;
 
     /**
@@ -90,6 +90,20 @@ public class Chat extends Activity {
         String message = editText.getText().toString();
         editText.setText("");
         mMessages.add(new Message(message,userSwitch.checked()));
+
+        // switch user if enabled in the settings
         if(this.autoSwitch) userSwitch.toggle();
+
+        // Scroll to the last message
+        if (mMessages.getCount() > 0) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    final ListView listView = (ListView) findViewById(R.id.message_view);
+                    listView.setAdapter(mMessages);
+                    listView.setSelection(mMessages.getCount() - 1);
+                }
+            });
+        }
     }
 }
