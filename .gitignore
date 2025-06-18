@@ -35,5 +35,3 @@ google-services.json
 # other .gitignore elements from the original repo
 # MacOS stuff
 .DS_Store
-# images?
-/*.png
