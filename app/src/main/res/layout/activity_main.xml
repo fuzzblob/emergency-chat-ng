@@ -5,6 +5,32 @@
     android:weightSum="1"
     android:gravity="center_vertical|center">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/switchNextUserLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/white"
+            />
+
+        <Button
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:onClick="openSettings"
+            android:drawableStart="@android:drawable/ic_menu_preferences"
+            android:drawableLeft="@android:drawable/ic_menu_preferences"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_gravity="top|right"/>
+    </FrameLayout>
+
     <RelativeLayout android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1">
@@ -17,14 +43,4 @@
          />
     </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:onClick="openSettings"
-        android:drawableStart="@android:drawable/ic_menu_preferences"
-        android:drawableLeft="@android:drawable/ic_menu_preferences"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:layout_gravity="bottom|right"/>
 </LinearLayout>
