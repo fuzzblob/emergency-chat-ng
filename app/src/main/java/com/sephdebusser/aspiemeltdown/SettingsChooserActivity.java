@@ -2,7 +2,7 @@ package com.sephdebusser.aspiemeltdown;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -11,7 +11,7 @@ import android.widget.ListView;
  * Created by Seph De Busser on 23/12/2016.
  */
 
-public class SettingsChooserActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class SettingsChooserActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private static final int SCREENS_SETTINGS = 0;
     private static final int MISC_SETTINGS = 1;

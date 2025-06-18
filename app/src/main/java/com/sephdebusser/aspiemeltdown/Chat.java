@@ -1,4 +1,4 @@
-packagepackage com.sephdebusser.aspiemeltdown;
+package com.sephdebusser.aspiemeltdown;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
