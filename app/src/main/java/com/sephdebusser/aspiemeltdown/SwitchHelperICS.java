@@ -3,6 +3,7 @@ package com.sephdebusser.aspiemeltdown;
 import android.app.Activity;
 import android.content.Context;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.SwitchCompat;
 
@@ -14,10 +15,12 @@ import androidx.appcompat.widget.SwitchCompat;
 public class SwitchHelperICS extends SwitchHelper {
 
     SwitchCompat s;
+    TextView label;
     private Context c;
 
     public SwitchHelperICS(Activity activity, boolean start) {
         s = (SwitchCompat) activity.findViewById(R.id.userSwitch);
+        label = (TextView) activity.findViewById(R.id.switchNextUserLabel);
         this.c = activity;
 
         // Set an OnCheckedChangeListener to handle state changes
@@ -26,11 +29,11 @@ public class SwitchHelperICS extends SwitchHelper {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // Change background color based on checked state
                 if (isChecked) {
-                    s.setBackgroundColor(c.getResources().getColor(R.color.chat_person_color_l));
-                    // Perform action for switch on
+                    label.setText(c.getResources().getString(R.string.switch_hint_left));
+                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_l));
                 } else {
-                    s.setBackgroundColor(c.getResources().getColor(R.color.chat_person_color_r));
-                    // Perform action for switch off
+                    label.setText(c.getResources().getString(R.string.switch_hint_right));
+                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_r));
                 }
             }
         });

@@ -37,23 +37,35 @@
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/userSwitch"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/chat_person_color_r"
+
             android:visibility="visible"
             android:clickable="true"
             android:focusable="true"
             app:showText="false" />
 
         <TextView
+            android:id="@+id/switchNextUserLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/switch_hint_right"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/chat_person_color_r"
+            android:translationX="10dp" />
+
+        <TextView
             android:id="@+id/switchLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="center|right"
             android:text="@string/switch_user"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/white"
+            android:translationX="-10dp" />
     </FrameLayout>
 
     <LinearLayout
