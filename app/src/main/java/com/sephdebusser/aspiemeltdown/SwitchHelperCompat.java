@@ -1,8 +1,7 @@
 package com.sephdebusser.aspiemeltdown;
 
 import android.app.Activity;
-import android.support.v7.widget.SwitchCompat;
-
+import androidx.appcompat.widget.SwitchCompat;
 /**
  * Created by Seph De Busser on 18/07/2015.
  */
