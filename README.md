@@ -4,9 +4,17 @@ An attempt to revive an old emergency chat app for text communication during mel
 
 The app aims to be a tool that people can carry with them and have available in an emergency. A single phone should suffice to have communication with someone in person.
 
+## index
+
+- [motivation](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#motivation)
+- [compatibility](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#compatibility)
+- [building](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#building)
+- [origin / versions](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#origin-and-orther-versions)
+- [screenshots](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#screenshots)
+
 ## motivation
 
-The reason I started working on this version of the app is that my phone is not compatible with the old 32bit only build available on sketchy mirrors like ApkPure. I wanted access to the app and was granted permission to take the source code and bring it to more modern versions of android.
+The reason I started working on this version of the app is that my phone is not compatible with the old 32 bit armv7 build available on sketchy mirrors like ApkPure. I wanted access to the app on my own phone and was granted permission to take the source code and bring it to more modern versions of android. I believe the last version released publicly was 2.1 so I continued in with 2.1.1 being my first pre-release.
 
 ## compatibility
 
@@ -16,11 +24,11 @@ I currently test with a Pixel 9a on Android 15/Level 35/VANILLA_ICE_CREAM as wel
 
 ## building
 
-I am using the latest version of Android Studio. The project uses cradle 7.4 and JDK 11 to do builds. further instructions will be set up at a later point.
+I am using the latest version of Android Studio (merecat at the time of writing). The project uses cradle 7.4 and JDK 11 to do builds. further instructions will be set up at a later point.
 
 ## origin and orther versions
 
-Original code by Seph De Busser. An iOS version exists by Leonard Elezi ([iOS version of emergencychat on github](https://github.com/LeonardElezi/emergencychat) and on the [AppStore](https://itunes.apple.com/be/app/emergency-chat/id1024194363)). A windows app is availe courtesy of [Daniel Tan](https://novalistic.com/products/emergency-chat).
+The original code is by Seph De Busser. An iOS version of it exists, written byby Leonard Elezi ([github](https://github.com/LeonardElezi/emergencychat) & [AppStore](https://itunes.apple.com/be/app/emergency-chat/id1024194363)). A windows app is availe courtesy of [Daniel Tan](https://novalistic.com/products/emergency-chat).
 
 ## screenshots
 
@@ -32,3 +40,5 @@ screenshots taken of version 2.1.2 on 2025.06.18:
 ![Image](https://github.com/user-attachments/assets/b0393895-9bfc-4c3a-8e08-d2118e9fd39f)
 ![Image](https://github.com/user-attachments/assets/db63ba1a-8ad0-4c08-a157-294677152c8b)
 ![Image](https://github.com/user-attachments/assets/5972a8bd-a3cc-412e-b149-1e403b3e40d3)
+
+[back to the top](https://github.com/fuzzblob/emergency-chat-ng/blob/main/README.md#emergency-chat-ng)
