@@ -13,7 +13,7 @@
         android:layout_marginLeft="@dimen/msg_margin"
         android:layout_marginRight="@dimen/msg_large_margin"
         android:layout_marginBottom="@dimen/msg_margin"
-        android:background="#ffb0f8ff"
+        android:background="@color/chat_person_color_you"
         android:textColor="#ff000000"
         android:textSize="@dimen/text_size"
         android:gravity="left"

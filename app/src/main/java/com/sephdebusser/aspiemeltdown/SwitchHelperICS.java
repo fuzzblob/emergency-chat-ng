@@ -30,10 +30,10 @@ public class SwitchHelperICS extends SwitchHelper {
                 // Change background color based on checked state
                 if (isChecked) {
                     label.setText(c.getResources().getString(R.string.switch_hint_left));
-                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_l));
+                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_me));
                 } else {
                     label.setText(c.getResources().getString(R.string.switch_hint_right));
-                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_r));
+                    label.setTextColor(c.getResources().getColor(R.color.chat_person_color_you));
                 }
             }
         });

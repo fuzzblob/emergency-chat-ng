@@ -54,7 +54,7 @@
             android:layout_gravity="center_vertical"
             android:text="@string/switch_hint_right"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/chat_person_color_r"
+            android:textColor="@color/chat_person_color_you"
             android:translationX="10dp" />
 
         <TextView
