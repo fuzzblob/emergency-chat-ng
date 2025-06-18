@@ -30,7 +30,7 @@
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent" />
 
-    <android.support.v7.widget.SwitchCompat android:layout_width="wrap_content"
+    <androidx.appcompat.widget.SwitchCompat android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:showText="false"
         android:layout_gravity="center_horizontal"
