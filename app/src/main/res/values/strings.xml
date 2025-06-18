@@ -3,6 +3,7 @@
 
     <string name="app_name">Emergency chat</string>
     <string name="meltdown_warning">Aspie meltdown</string>
+    <string name="switch_user">Switch User</string>
     <string name="chat_hint">Message</string>
     <string name="send">Send</string>
     <string name="splash">I gave you my phone because I can\'t use or process speech right now, but I am still capable of text communication.\n

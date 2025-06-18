@@ -30,15 +30,31 @@
         android:listSelector="@android:color/transparent"
         android:cacheColorHint="@android:color/transparent" />
 
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/userSwitch"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/chat_person_color_r"
-        android:clickable="true"
-        android:focusable="true"
-        app:showText="false" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/userSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/chat_person_color_r"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"
+            app:showText="false" />
+
+        <TextView
+            android:id="@+id/switchLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/switch_user"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/black" />
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/fullscreen_content_controls"
