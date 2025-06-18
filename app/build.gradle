@@ -16,8 +16,8 @@ android {
 
     defaultConfig {
         applicationId "com.sephdebusser.aspiemeltdown"
-        minSdkVersion 14
-        targetSdkVersion 22
+        minSdkVersion defaultMinSdkVersion
+        targetSdkVersion defaultTargetSdkVersion
         versionCode 7
         versionName '2.1.1'
     }

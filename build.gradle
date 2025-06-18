@@ -12,6 +12,10 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
+ext {
+    defaultMinSdkVersion = 19
+    defaultTargetSdkVersion = 24
+}
 
 allprojects {
     repositories {
