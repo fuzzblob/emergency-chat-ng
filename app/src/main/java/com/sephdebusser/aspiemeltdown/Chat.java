@@ -32,6 +32,7 @@ public class Chat extends Activity {
     private SwitchHelper userSwitch;
 
     private boolean autoSwitch;
+    private boolean autoScroll;
 
     private MessageDao session;
 
@@ -65,6 +66,7 @@ public class Chat extends Activity {
         super.onResume();
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         this.autoSwitch = pref.getBoolean(SettingsActivity.KEY_SWITCH,true);
+        this.autoScroll = pref.getBoolean(SettingsActivity.KEY_SCROLL,true);
     }
 
     @Override
@@ -95,7 +97,7 @@ public class Chat extends Activity {
         if(this.autoSwitch) userSwitch.toggle();
 
         // Scroll to the last message
-        if (mMessages.getCount() > 0) {
+        if (autoScroll && mMessages.getCount() > 0) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {

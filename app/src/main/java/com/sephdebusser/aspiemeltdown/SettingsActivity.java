@@ -22,6 +22,7 @@ public class SettingsActivity extends PreferenceActivity {
     public static final String KEY_PREF_HEADER = "pref_splash_header";
     public static final String KEY_PREF_SIZE = "pref_text_size";
     public static final String KEY_SWITCH = "pref_switch";
+    public static final String KEY_SCROLL = "pref_scroll";
 
     private AppCompatDelegate mDelegate;
 

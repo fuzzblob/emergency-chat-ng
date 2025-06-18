@@ -9,11 +9,23 @@
         android:entries="@array/textSizes"
         android:entryValues="@array/textSizeValues"/>
     </PreferenceCategory>
+
     <PreferenceCategory
         android:title="Chat">
-        <CheckBoxPreference android:key="pref_switch"
-            android:title="Auto-switch user"
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="pref_switch"
             android:summary="Switches the user after each message"
-            android:defaultValue="true"/>
+            android:title="Auto-switch user" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="pref_scroll"
+            android:summary="Scrolls view to make latest message visible"
+            android:title="Auto-scroll view" />
     </PreferenceCategory>
+
 </PreferenceScreen>
