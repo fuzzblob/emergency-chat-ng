@@ -30,6 +30,13 @@ jobs:
 #        target: 'android-34' # Specify the target
 #        components: 'build-tools;34.0.0' # Ensure this matches your build tools version
 
+    - name: Decode Keystore
+      env:
+            ENCODED_STRING: ${{ secrets.KEYSTORE }}
+      run: |
+            TMP_KEYSTORE_FILE_PATH="${RUNNER_TEMP}"/keystore
+            mkdir "${TMP_KEYSTORE_FILE_PATH}"
+            echo $ENCODED_STRING | base64 -di > "${TMP_KEYSTORE_FILE_PATH}"/fuzzblob-android-signing-keys.jks
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
