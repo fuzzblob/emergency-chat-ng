@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - '**'  # This will also trigger the workflow for pull requests on any branch
+  workflow_dispatch:  # This allows manual triggering of the workflow
 
 jobs:
   build:
