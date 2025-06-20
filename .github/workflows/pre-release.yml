@@ -1,0 +1,55 @@
+name: Create Pre-release
+
+on:
+  push:
+    tags:
+      - 'v*'  # This will match tags that start with 'v', e.g., v1.0.0
+
+jobs:
+  create-pre-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get install gh
+      - name: Check Version Number
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          # Check if the tag is a valid version number
+          if [[ ! $TAG_NAME =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Error: Tag $TAG_NAME is not a valid version number."
+            # Fail the workflow
+            exit 1
+          fi
+          echo "Valid version number: $TAG_NAME"
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: android-build-artifacts
+          path: ./artifacts
+      - name: Unzip Artifacts
+        run: |
+          mkdir -p ./unzipped_artifacts
+          unzip './artifacts/*.zip' -d ./unzipped_artifacts
+
+      - name: Prepare APK Files
+        id: prepare_apk_files
+        run: |
+          APK_FILES=()
+          # Collect APK files from debug and release folders
+          APK_FILES+=("./unzipped_artifacts/debug/*.apk")
+          APK_FILES+=("./unzipped_artifacts/release/*.apk")
+          # Convert to a space-separated string
+          APK_FILES_STRING=$(printf "%s " "${APK_FILES[@]}")
+          echo "APK_FILES=$APK_FILES_STRING" >> $GITHUB_ENV
+      - name: Create Pre-release
+        id: create_release
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          echo "Creating pre-release for version $TAG_NAME"
+          # Use GitHub CLI to create a pre-release and upload APK files
+          gh release create "$TAG_NAME" --pre-release --title "$TAG_NAME - automatic pre-release" --notes "This is a pre-release for version $TAG_NAME." $APK_FILES
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
