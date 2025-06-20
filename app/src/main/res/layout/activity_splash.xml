@@ -9,7 +9,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.fuzzblob.emergencychatng.Splash"
     android:id="@+id/splash_layout"
-    android:showDividers="none">
+    android:showDividers="none"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:layout_width="wrap_content"
