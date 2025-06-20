@@ -15,42 +15,38 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
         java-version: '11' # Ensure this matches your compile options
         distribution: 'temurin'
         cache: gradle
-
-#    - name: Install Android SDK
-#      uses: android-actions/setup-android@v2
-#      with:
-#        api-level: 34 # Match this with your compileSdkVersion
-#        target: 'android-34' # Specify the target
-#        components: 'build-tools;34.0.0' # Ensure this matches your build tools version
-
     - name: Decode Keystore
+      run: |
+            TMP_KEYSTORE_FILE_PATH="${RUNNER_TEMP}/keystore"
+            mkdir -p "${TMP_KEYSTORE_FILE_PATH}"
+            echo $ENCODED_STRING | base64 -di > "${TMP_KEYSTORE_FILE_PATH}"/fuzzblob-android-signing-keys.jks
+            echo "KEYSTORE_PATH=${TMP_KEYSTORE_FILE_PATH}/fuzzblob-android-signing-keys.jks"
+            echo "KEYSTORE_PATH=${TMP_KEYSTORE_FILE_PATH}/fuzzblob-android-signing-keys.jks" >> $GITHUB_ENV
       env:
             ENCODED_STRING: ${{ secrets.KEYSTORE }}
-      run: |
-            TMP_KEYSTORE_FILE_PATH="${RUNNER_TEMP}"/keystore
-            mkdir "${TMP_KEYSTORE_FILE_PATH}"
-            echo $ENCODED_STRING | base64 -di > "${TMP_KEYSTORE_FILE_PATH}"/fuzzblob-android-signing-keys.jks
-
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-#    - name: Build with Gradle
-#      run: ./gradlew build
-
-    - name: Build with Gradle
+    - name: Build Debug
       run: ./gradlew assembleDebug # Use assembleDebug or assembleRelease based on your needs
-
-#    - name: Run tests
-#      run: ./gradlew test # Adjust this command if needed
-
+      env:
+        # Reference your GitHub secrets
+        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+        KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}  # Use the exported path
+#   - name: Run tests
+#     run: ./gradlew test # Adjust this command if needed
     - name: Build Release
       run: ./gradlew assembleRelease # Optional: Add this if you want to build the release version
       env:
-        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }} # Reference your GitHub secret
-        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }} # Reference your GitHub secret
+        # Reference your GitHub secrets
+        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+        KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}  # Use the exported path
