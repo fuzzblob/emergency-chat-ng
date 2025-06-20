@@ -36,7 +36,7 @@ jobs:
       run: ./gradlew assembleDebug # Use assembleDebug or assembleRelease based on your needs
       env:
         # Reference your GitHub secrets
-        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+        STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
         KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}  # Use the exported path
@@ -46,7 +46,7 @@ jobs:
       run: ./gradlew assembleRelease # Optional: Add this if you want to build the release version
       env:
         # Reference your GitHub secrets
-        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+        STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
         KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}  # Use the exported path
