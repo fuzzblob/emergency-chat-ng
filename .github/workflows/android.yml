@@ -51,6 +51,19 @@ jobs:
         KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
         KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
         KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}  # Use the exported path
+    - name: Set  retention days
+      id: set_retention
+      run: |
+       if [[ '${{ github.ref }}' == 'refs/heads/main' ]]; then
+         echo "RETENTION_DAYS=30" >> $GITHUB_ENV
+         echo "Retention days set to 30"
+       elif [[ '${{ github.event_name }}' == 'pull_request' ]]; then
+         echo "RETENTION_DAYS=7" >> $GITHUB_ENV
+         echo "Retention days set to 7"
+       else
+         echo "RETENTION_DAYS=2" >> $GITHUB_ENV
+         echo "Retention days set to 2"
+       fi
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -58,4 +71,4 @@ jobs:
         path: |
           app/build/outputs/apk/debug/app-debug.apk
           app/build/outputs/apk/release/app-release.apk
-        retention-days: 7
+        retention-days: ${{ env.RETENTION_DAYS }}
