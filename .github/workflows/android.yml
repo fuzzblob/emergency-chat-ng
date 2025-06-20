@@ -1,0 +1,49 @@
+name: Android CI
+
+on:
+  push:
+    branches:
+      - '**'  # This will trigger the workflow on any branch
+  pull_request:
+    branches:
+      - '**'  # This will also trigger the workflow for pull requests on any branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11' # Ensure this matches your compile options
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Install Android SDK
+      uses: android-actions/setup-android@v2
+      with:
+        api-level: 34 # Match this with your compileSdkVersion
+        target: 'android-34' # Specify the target
+        components: 'build-tools;34.0.0' # Ensure this matches your build tools version
+
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+#    - name: Build with Gradle
+#      run: ./gradlew build
+
+    - name: Build with Gradle
+      run: ./gradlew assembleDebug # Use assembleDebug or assembleRelease based on your needs
+
+#    - name: Run tests
+#      run: ./gradlew test # Adjust this command if needed
+
+    - name: Build Release
+      run: ./gradlew assembleRelease # Optional: Add this if you want to build the release version
+      env:
+        STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }} # Reference your GitHub secret
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }} # Reference your GitHub secret
