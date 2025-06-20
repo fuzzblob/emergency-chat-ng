@@ -11,7 +11,38 @@ buildscript {
     }
 }
 
+// Function to load environment variables from .env file
+def loadEnv() {
+    def envFile = file('.env')
+    def envVars = [:] // Map to hold environment variables
+
+    if (envFile.exists()) {
+        println "Loading environment variables from .env file"
+        envFile.eachLine { line ->
+            if (!line.startsWith('#') && line.contains('=')) {
+                def (key, value) = line.split('=', 2)
+                envVars[key.trim()] = value.trim()
+            }
+        }
+    } else {
+        println ".env file not found. Using GitHub Secrets."
+        // check if keystore string exists to avoid possible null
+        def keystorePath = System.getenv('KEYSTORE_PATH')
+        if (keystorePath) {
+            envVars['KEYSTORE_PATH'] = System.getenv("KEYSTORE_PATH")
+        } else {
+            throw new GradleException("KEYSTORE_PATH environment variable is not set. Please set it to the path of your keystore.")
+        }
+        envVars['STORE_PASSWORD'] = System.getenv("STORE_PASSWORD")
+        envVars['KEY_ALIAS'] = System.getenv("KEY_ALIAS")
+        envVars['KEY_PASSWORD'] = System.getenv("KEY_PASSWORD")
+    }
+
+    return envVars
+}
+
 android {
+    // TODO: update gradle version
     compileSdkVersion 34
 
     defaultConfig {
@@ -23,10 +54,12 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(System.getenv('KEYSTORE_PATH'))
-            storePassword System.getenv('STORE_PASSWORD')
-            keyAlias System.getenv('KEY_ALIAS')
-            keyPassword System.getenv('KEY_PASSWORD')
+            // Load environment variables
+            def env = loadEnv()
+            storeFile file(env['KEYSTORE_PATH'])
+            storePassword env['STORE_PASSWORD']
+            keyAlias env['KEY_ALIAS']
+            keyPassword env['KEY_PASSWORD']
         }
     }
     buildTypes {
