@@ -1,5 +1,7 @@
 # Emergency Chat NG
 
+[![build status](https://github.com/fuzzblob/emergency-chat-ng/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/fuzzblob/emergency-chat-ng/actions/workflows/android.yml)
+
 A simple communication tool for local, on-device chat during situations of overwhelm, shutdowns, meltdowns and situational mutism
 
 This repository aims to revive the legacy `Emergency chat` app (Also known as `Aspie Meltdown`). The app aims to be a tool that people can carry with them and have available in an emergency. A single phone should suffice to have communication with someone in person.
