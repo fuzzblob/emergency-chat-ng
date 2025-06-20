@@ -12,14 +12,14 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId 'com.fuzzblob.emergencychatng'
         minSdkVersion defaultMinSdkVersion
         targetSdkVersion defaultTargetSdkVersion
         versionCode 7
-        versionName '3.0.0'
+        versionName '3.0.1'
     }
     buildTypes {
         release {
