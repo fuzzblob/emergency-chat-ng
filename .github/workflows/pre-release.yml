@@ -25,7 +25,7 @@ jobs:
           fi
           echo "Valid version number: $TAG_NAME"
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: android-build-artifacts
           path: ./artifacts
