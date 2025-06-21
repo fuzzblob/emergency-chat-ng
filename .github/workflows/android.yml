@@ -68,7 +68,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: android-build-artifacts
-        path: |
-          app/build/outputs/apk/debug/app-debug.apk
-          app/build/outputs/apk/release/app-release.apk
+        path: app/build/outputs/apk/**
         retention-days: ${{ env.RETENTION_DAYS }}
