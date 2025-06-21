@@ -52,4 +52,4 @@ jobs:
           # Use GitHub CLI to create a pre-release and upload APK files
           gh release create "$TAG_NAME" --pre-release --title "$TAG_NAME - automatic pre-release" --notes "This is a pre-release for version $TAG_NAME." $APK_FILES
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN }}  # Automatically provided by GitHub Actions
