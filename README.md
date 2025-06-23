@@ -24,7 +24,7 @@ This repository aims to revive the legacy `Emergency chat` app (Also known as `A
 
 ## screenshots
 
-screenshots taken of [version 3.0.0](https://github.com/fuzzblob/emergency-chat-ng/releases/tag/3.0.0) on 2025.06.19:
+screenshots taken of version 3.0.0 on 2025.06.19:
 
 | Default Splash Screen | Chat View | Splash Screen Editor | Settings |
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
